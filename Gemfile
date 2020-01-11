@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem 'graphql', '~> 1.9' # Ruby implementation of GraphQL http://graphql-ruby.org
 
+gem 'devise', '~> 4.7', '>= 4.7.1' # User auth library.
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

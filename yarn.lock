@@ -4952,6 +4952,11 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^4.0.0"
 
+pnotify@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/pnotify/-/pnotify-4.0.0.tgz#22b29ae91f0f4727cb3caf137411d0e3777a8017"
+  integrity sha512-Fs3xlxmnlgXjUdM3xFfImfkLh5RmTgfRyPS5yT43w0OIrVULbGu1g3mpiH9H2nlAZ5dFEJRqh43sQXl/mVW6yA==
+
 pnp-webpack-plugin@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/pnp-webpack-plugin/-/pnp-webpack-plugin-1.5.0.tgz#62a1cd3068f46d564bb33c56eb250e4d586676eb"

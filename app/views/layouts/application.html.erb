@@ -1,15 +1,35 @@
+<% presenter = ::Layouts::ApplicationPresenter.new(self) %>
+
 <!DOCTYPE html>
-<html>
+<html lang='en' data-flash="<%= presenter.flash_messages %>">
   <head>
-    <title>HoverspacesRails</title>
+    <title>Hoverspaces</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Hover spaces"/>
+    <meta property="og:description" content="Hover spaces"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'shared/flashes', media: 'all' %>
+
+
+    <!-- Scripts -->
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'shared/flashes','data-turbolinks-track': 'reload', nonce: true %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body data-env="<%= Rails.env %>">
+  <section class="min-h-full flex flex-col items-stretch">
+    <%#= yield :nav %>
+    <main class="flex-grow bg-gray-100">
+        <%= yield %>
+    </main>
+    <%#= yield :footer %>
+  </section>
   </body>
 </html>
