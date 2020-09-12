@@ -1,24 +1,16 @@
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple rails starter with few addon's that i generally use.
 
-Things you may want to cover:
+### Includes
+- Reason React
+- Tailwind 
+- Active Admin 
+- Reform Rails 
+- Devise
+- Omniauth - Facebook & Google
+- Fontawesome
+- Pnotify
+- Reason Utils [bs-fetch, @glennsl/bs-json, bs-platform, bs-webapi]
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
