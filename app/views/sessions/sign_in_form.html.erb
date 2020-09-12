@@ -1,0 +1,45 @@
+<% @hide_nav = true %>
+
+<% content_for(:head) do %>
+  <title>your_app_name | Sign In</title>
+<% end %>
+
+<div class="flex bg-gray-100 min-h-screen">
+  <div class="w-full lg:w-3/6 mx-auto flex justify-center items-center">
+    <div class="max-w-md w-full mx-auto px-4 py-8">
+      <%#= image_tag 'home/logo.png', class: 'w-28 mx-auto', alt: 'you_app_name' %>
+      <div>
+        <div class="mt-4 flex-col justify-between">
+          <div class="mt-4">
+
+            <% if ENV['GOOGLE_CLIENT_ID'].present? %>
+              <a href="/auth/google_oauth2" class="btn bg-white shadow btn-large w-full hover:shadow-md">
+                <%= image_tag 'login/google-icon.svg', class: 'w-4', alt: 'Continue with Google' %>
+                <span class="ml-2">Continue with Google</span>
+              </a>
+            <% end %>
+
+            <% if ENV['GOOGLE_CLIENT_ID'].present? %>
+              <a href="/auth/facebook" class="btn bg-white shadow btn-large w-full hover:shadow-md mt-2">
+                <i class="fab fa-facebook text-lg text-blue-700"></i>
+                <span class="ml-2">Continue with Facebook</span>
+              </a>
+            <% end %>
+
+            <div>
+              <div class="text-center mt-4">
+                <p class="inline-block text-xs">Don’t want to save your address?</p>
+
+                <% if @path.present? %>
+                  <a class="inline-block text-xs font-semibold underline text-primary-600 p-1 rounded hover:bg-primary-100" href=<%= @path %>>
+                    Skip Login
+                  </a>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

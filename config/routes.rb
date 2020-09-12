@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
-  if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
-  end
-  post "/graphql", to: "graphql#execute"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users, only: %w[], sign_out_via: %i[get delete]
 
-  root to: "home#index"
+  # OAuth callbacks.
+  get '/auth/google_oauth2/callback', to: 'sessions#google_oauth2'
+  get '/auth/facebook/callback', to: 'sessions#facebook'
+  post '/auth/developer/callback', to: 'sessions#developer'
+
+  # Session management.
+  get '/sign_in_with', to: 'sessions#sign_in_with'
+  get '/sign_in', to: 'sessions#sign_in_form'
+  # post '/sign_in', to: 'sessions#send_sign_in_mail'
+  get '/sign_out', to: 'sessions#sign_out_user'
+
+  root to: 'home#index'
 end

@@ -1,32 +1,49 @@
-<% presenter = ::Layouts::ApplicationPresenter.new(self) %>
-
 <!DOCTYPE html>
-<html lang='en' data-flash="<%= presenter.flash_messages %>">
-  <head>
-    <title>Hoverspaces</title>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Hover spaces"/>
-    <meta property="og:description" content="Hover spaces"/>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang='en'>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#F1A035">
+  <title>Your App Name</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= yield :head %>
+</head>
 
-    <!-- Scripts -->
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<body>
+<% unless @hide_nav %>
+  <%= render 'layouts/header' %>
+<% end %>
 
-  <body data-env="<%= Rails.env %>">
-  <section class="min-h-full flex flex-col items-stretch">
-    <%#= yield :nav %>
-    <main class="flex-grow bg-gray-100">
-        <%= yield %>
-    </main>
-    <%#= yield :footer %>
-  </section>
-  </body>
+<% flash.each do |kind, message| %>
+  <% kind = kind.to_sym %>
+  <% background_color = kind == :alert ? 'bg-red-700' : 'bg-primary-600' %>
+  <% icon_color = kind == :alert ? 'text-red-100' : 'text-white' %>
+  <div class="flex items-center justify-center font-semibold text-white text-sm p-4 text-center <%= background_color %>">
+    <% if kind == :alert %>
+      <i class="fas fa-exclamation-triangle text-lg <%= icon_color %>"></i>
+    <% else %>
+      <i class="fas fa-check-circle text-lg <%= icon_color %>"></i>
+    <% end %>
+    <span class="ml-1"><%= message.html_safe %></span>
+  </div>
+<% end %>
+
+<%= yield :header %>
+
+<% if content_for?(:wrapper) %>
+  <%= yield :wrapper %>
+<% else %>
+  <%= yield %>
+<% end %>
+
+<%= render 'layouts/footer' %>
+
+<%= yield :tail %>
+</body>
 </html>

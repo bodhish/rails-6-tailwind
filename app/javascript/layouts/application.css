@@ -1,0 +1,231 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+/* Custom utilities */
+
+.max-w-fc {
+  max-width: fit-content;
+}
+
+/* Custom Style */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #453c52;
+  @apply antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+/* Button */
+
+.btn {
+  @apply inline-flex items-center justify-center whitespace-no-wrap text-sm font-semibold py-2 px-4 rounded cursor-pointer;
+}
+
+.btn:focus {
+  @apply outline-none shadow-inner;
+}
+
+/* Button Styles */
+
+.btn-default {
+  @apply bg-gray-300 text-primary-500;
+}
+
+.btn-default:hover {
+  @apply bg-gray-400 text-primary-600;
+}
+
+.btn-default:focus {
+  @apply bg-gray-400 text-primary-700;
+}
+
+.btn-primary {
+  @apply bg-primary-500 text-white shadow;
+}
+
+.btn-primary:hover {
+  @apply bg-primary-600;
+}
+
+.btn-primary:focus {
+  @apply bg-primary-800;
+}
+
+.btn-primary-ghost {
+  @apply bg-white text-primary-500 border border-primary-500;
+}
+
+.btn-primary-ghost:hover {
+  @apply bg-primary-100 text-primary-600 border-primary-400;
+}
+
+.btn-primary-ghost:focus {
+  @apply bg-primary-800 text-white border-primary-400;
+}
+
+.btn-success {
+  @apply bg-green-600 text-white;
+  background-image: linear-gradient(
+    135deg,
+    rgba(56, 161, 105, 1) 0%,
+    rgba(47, 133, 90, 1) 100%
+  );
+}
+
+.btn-success:hover {
+  @apply bg-green-600;
+  background-image: linear-gradient(
+    135deg,
+    rgba(47, 133, 90, 1) 0%,
+    rgba(39, 103, 73, 1) 100%
+  );
+}
+
+.btn-success:focus {
+  @apply bg-green-800;
+  background-image: none;
+}
+
+.btn-warning {
+  @apply bg-yellow-500 text-white;
+  background-image: linear-gradient(
+    135deg,
+    rgba(237, 137, 54, 1) 0%,
+    rgba(221, 107, 32, 1) 100%
+  );
+}
+
+.btn-warning:hover {
+  @apply bg-yellow-600;
+  background-image: linear-gradient(
+    135deg,
+    rgba(221, 107, 32, 1) 0%,
+    rgba(192, 86, 33, 1) 100%
+  );
+}
+
+.btn-warning:focus {
+  @apply bg-yellow-800;
+  background-image: none;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white;
+  background-image: linear-gradient(
+    135deg,
+    rgba(245, 101, 101, 1) 0%,
+    rgba(229, 62, 62, 1) 100%
+  );
+}
+
+.btn-danger:hover {
+  @apply bg-red-600;
+  background-image: linear-gradient(
+    135deg,
+    rgba(229, 62, 62, 1) 0%,
+    rgba(197, 48, 48, 1) 100%
+  );
+}
+
+.btn-danger:focus {
+  @apply bg-red-800;
+  background-image: none;
+}
+
+button:disabled,
+.disabled {
+  @apply cursor-not-allowed bg-gray-100 text-gray-500 shadow-none border-transparent;
+  background-image: none;
+}
+
+button:disabled:hover,
+.disabled:hover,
+button:disabled:focus,
+.disabled:focus {
+  @apply bg-gray-100 text-gray-500 border-transparent shadow-none;
+  background-image: none;
+}
+
+.btn-small {
+  @apply py-1 px-3 text-xs h-7 leading-tight;
+}
+
+.btn-normal {
+  @apply py-2 px-4 text-sm h-8;
+}
+
+.btn-large {
+  @apply py-2 px-5 text-sm h-10;
+}
+
+/* Toggle buttons */
+
+.toggle-button__group {
+  @apply relative leading-relaxed rounded bg-white;
+}
+
+.toggle-button__button {
+  @apply flex-1 text-sm font-semibold py-1 px-6 text-gray-700 border border-gray-400 border-r-0;
+}
+
+.toggle-button__button:first-child {
+  @apply rounded-l border-l;
+}
+
+.toggle-button__button:last-child {
+  @apply rounded-r border-r border-l-0;
+}
+
+.toggle-button__button--active {
+  @apply bg-primary-100 text-primary-600 border-primary-500;
+  border-width: 1px !important;
+}
+
+.toggle-button__button--active:hover {
+  @apply toggle-button__button--active;
+}
+
+.toggle-button__button:hover {
+  @apply bg-gray-200 text-gray-900;
+}
+
+.toggle-button__button:focus {
+  @apply outline-none text-primary-600;
+}
+
+.toggle-button__button--active + .toggle-button__button {
+  border-left: none;
+}

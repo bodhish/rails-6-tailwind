@@ -1,17 +1,31 @@
 {
-  "name": "hoverspaces_rails",
+  "name": "your_app_name",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.0-alpha",
-    "@rails/activestorage": "^6.0.0-alpha",
-    "@rails/ujs": "^6.0.0-alpha",
-    "@rails/webpacker": "4.2.2",
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@glennsl/bs-json": "^5.0.1",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.3.0",
+    "@tailwindcss/ui": "^0.5.0",
+    "bs-fetch": "^0.6.1",
+    "bs-platform": "8.0.3",
+    "bs-webapi": "^0.17.1",
     "pnotify": "^4.0.0",
-    "tailwindcss": "^1.1.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "reason-react": ">=0.9.1",
     "turbolinks": "^5.2.0"
+  },
+  "scripts": {
+    "postinstall": "bsb -clean-world -make-world",
+    "re:build": "bsb -make-world -clean-world",
+    "re:watch": "bsb -make-world -clean-world -w"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.10.1"
+    "tailwindcss": "^1.4",
+    "webpack-dev-server": "^3.11.0"
   }
 }
