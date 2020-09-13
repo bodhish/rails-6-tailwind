@@ -19,7 +19,7 @@ A simple rails starter with few addon's that i generally use.
 
 - Clone the repo
 - rename `example.env` to `.env`
-- replace all usages of `your_app_name` and `YOUR_APP_NAME` with you applciation name 
+- replace all usages of `your_app_name`, `YourAppName` and `YOUR_APP_NAME` with you applciation name 
 
 
 ## Install and configure dependencies
