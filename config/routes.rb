@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # Session management.
   get '/sign_in_with', to: 'sessions#sign_in_with'
   get '/sign_in', to: 'sessions#sign_in_form'
-  get '/sign_out', to: 'sessions#sign_out_user', as: 'destroy_user_session'
+  get '/sign_out', to: 'sessions#sign_out_user'
 
   root to: 'home#index'
 end

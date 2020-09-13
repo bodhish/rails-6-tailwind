@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def storable_location?
-    non_html_response = destroy_user_session_path
+    non_html_response = sign_out_path
     public_page = _process_action_callbacks.none? { |p| p.filter == :authenticate_user! }
 
     request.get? && is_navigational_format? && !request.xhr? && !public_page && !non_html_response
